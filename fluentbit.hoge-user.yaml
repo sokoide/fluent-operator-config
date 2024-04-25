@@ -1,0 +1,26 @@
+apiVersion: fluentbit.fluent.io/v1alpha2
+kind: FluentBit
+metadata:
+  labels:
+    # this name is super important
+    # if it doesn't exist, it fails to create a daemonset with a matchLabels error
+    app.kubernetes.io/name: fluent-bit-user
+  name: fluent-bit-user
+  namespace: default
+spec:
+  # fluentBitConfigName: fluentbitconfig-hoge-user-config
+  fluentBitConfigName: clusterfluentbitconfig-hoge-user-config
+  image: kubesphere/fluent-bit:v2.2.2
+  # namespaceFluentBitCfgSelector: {}
+  namespaceFluentBitCfgSelector:
+    matchLabels:
+      fluent-bit: user
+  positionDB:
+    hostPath:
+      path: /var/lib/fluent-bit/
+  resources: {}
+  service: {}
+status: {}
+
+# assumes
+# k label namespace fluent "fluent-bit=user"

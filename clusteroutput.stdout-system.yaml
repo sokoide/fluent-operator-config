@@ -1,0 +1,12 @@
+apiVersion: fluentbit.fluent.io/v1alpha2
+kind: ClusterOutput
+metadata:
+  name: clusteroutput-stdout-system
+  namespace: default
+  labels:
+    fluentbit.fluent.io/enabled: "true"
+spec:
+  match: '*'
+  stdout:
+    format: json_stream
+
