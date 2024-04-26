@@ -10,10 +10,10 @@ metadata:
 spec:
   fluentBitConfigName: clusterfluentbitconfig-system-config
   image: kubesphere/fluent-bit:v2.2.2
+  # namespaceFluentBitCfgSelector: {}
+  namespaceFluentBitCfgSelector:
+    matchLabels:
+      fluent-bit: system
   positionDB:
     hostPath:
       path: /var/lib/fluent-bit/
-  namespaceFluentBitCfgSelector: {}
-  # namespaceFluentBitCfgSelector:
-  #   matchLabels:
-  #     fb: system
