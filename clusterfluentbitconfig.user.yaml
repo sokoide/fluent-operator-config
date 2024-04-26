@@ -2,8 +2,6 @@ apiVersion: fluentbit.fluent.io/v1alpha2
 kind: ClusterFluentBitConfig
 metadata:
   name: clusterfluentbitconfig-user-config
-  labels:
-    fluent-bit: user
 spec:
   filterSelector:
     matchLabels:

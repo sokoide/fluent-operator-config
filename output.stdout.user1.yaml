@@ -1,7 +1,7 @@
 apiVersion: fluentbit.fluent.io/v1alpha2
 kind: Output
 metadata:
-  name: output-stdout-user
+  name: output-stdout-user1
   namespace: fluent
   labels:
     fluentbit.fluent.io/enabled: "user"

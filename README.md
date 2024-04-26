@@ -1,11 +1,18 @@
 ## README
 
-* Apply the following yamls
+### setup
+
+* With the following setup, `stdout` of all pods in `fluent` namespace is written in stdout of the daemonset fluentbit for user `fluentbit-user`.
+* The other namespace stdout is ignored
 
 ```sh
-clusterfluentbitconfig.hoge-system.yaml
-clusterfluentbitconfig.hoge-user.yaml
-fluentbit.hoge-system.yaml
-fluentbit.hoge-user.yaml
-output.stdout-user.yaml
+cd sh
+./quick-setup.sh
+```
+
+### clean
+
+```sh
+cd sh
+./clean.sh
 ```
