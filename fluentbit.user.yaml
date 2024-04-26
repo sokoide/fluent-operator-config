@@ -9,7 +9,7 @@ metadata:
   namespace: default
 spec:
   # fluentBitConfigName: fluentbitconfig-hoge-user-config
-  fluentBitConfigName: clusterfluentbitconfig-hoge-user-config
+  fluentBitConfigName: clusterfluentbitconfig-user-config
   image: kubesphere/fluent-bit:v2.2.2
   # namespaceFluentBitCfgSelector: {}
   namespaceFluentBitCfgSelector:

@@ -3,7 +3,7 @@ items:
   - apiVersion: fluentbit.fluent.io/v1alpha2
     kind: FluentBitConfig
     metadata:
-      name: fluentbitconfig-hoge-user-config
+      name: fluentbitconfig-user-config
       namespace: fluent
       labels:
         fluent-bit: user

@@ -1,14 +1,18 @@
 apiVersion: fluentbit.fluent.io/v1alpha2
 kind: FluentBit
 metadata:
-  name: hoge-system
+  labels:
+    # this name is super important
+    # if it doesn't exist, it fails to create a daemonset with a matchLabels error
+    app.kubernetes.io/name: fluent-bit-system
+  name: fluent-bit-system
   namespace: default
 spec:
+  fluentBitConfigName: clusterfluentbitconfig-system-config
   image: kubesphere/fluent-bit:v2.2.2
   positionDB:
     hostPath:
       path: /var/lib/fluent-bit/
-  fluentBitConfigName: hoge-system
   namespaceFluentBitCfgSelector: {}
   # namespaceFluentBitCfgSelector:
   #   matchLabels:

@@ -1,9 +1,7 @@
 apiVersion: fluentbit.fluent.io/v1alpha2
 kind: ClusterFluentBitConfig
 metadata:
-  name: clusterfluentbitconfig-hoge-user-config
-  labels:
-    fluent-bit: user
+  name: clusterfluentbitconfig-system-config
 spec:
   filterSelector:
     matchLabels:
@@ -11,12 +9,9 @@ spec:
   inputSelector:
     matchLabels:
       fluentbit.fluent.io/enabled: "true"
-  multilineParserSelector:
-    matchLabels:
-      fluentbit.fluent.io/enabled: "true"
   outputSelector:
     matchLabels:
-      fluentbit.fluent.io/enabled: "user"
+      fluentbit.fluent.io/enabled: "true"
   parserSelector:
     matchLabels:
       fluentbit.fluent.io/enabled: "true"
