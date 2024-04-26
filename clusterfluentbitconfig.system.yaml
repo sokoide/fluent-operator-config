@@ -9,6 +9,9 @@ spec:
   inputSelector:
     matchLabels:
       fluentbit.fluent.io/enabled: "true"
+  multilineParserSelector:
+    matchLabels:
+      fluentbit.fluent.io/enabled: "true"
   outputSelector:
     matchLabels:
       fluentbit.fluent.io/enabled: "true"

@@ -1,0 +1,22 @@
+apiVersion: fluentbit.fluent.io/v1alpha2
+kind: ClusterInput
+metadata:
+  annotations:
+    meta.helm.sh/release-name: fluent-operator
+    meta.helm.sh/release-namespace: default
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    fluentbit.fluent.io/component: logging
+    fluentbit.fluent.io/enabled: "true"
+  name: docker
+spec:
+  systemd:
+    db: /fluent-bit/tail/systemd.db
+    dbSync: Normal
+    path: /var/log/journal
+    storageType: memory
+    stripUnderscores: "off"
+    systemdFilter:
+    - _SYSTEMD_UNIT=docker.service
+    - _SYSTEMD_UNIT=kubelet.service
+    tag: service.*
